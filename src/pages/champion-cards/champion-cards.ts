@@ -21,7 +21,15 @@ export class ChampionCardsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public backendService: BackendProvider) {
-  	this.champList = this.backendService.getChampionList();
+  	this.backendService.getChampionList().then((data) => {
+  		this.champList = data;
+
+  		}, (error)=>{
+  			console.log(error);
+  			
+  		}
+  		)
+  	
   	console.log(this.champList);
   	
   }

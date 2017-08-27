@@ -37,9 +37,8 @@ export class BackendProvider {
 
     /*Getting a list of all the champions and their IDs*/
     getChampionList(){
-      return new Promise((resolve, reject) =>{
-        //https://euw1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=false&api_key=RGAPI-5f97d7af-1495-44c6-bbf0-c4295a8e16dc
-        let url = this.baseUrl + 'static-data/v3/champions?local=en_US&dataById&api_key=' + this.apiKey;
+      return new Promise((resolve, reject) =>{        
+        let url = "../../assets/cache/championData.json";
         console.log(url);
         
         this.http.get(url)
